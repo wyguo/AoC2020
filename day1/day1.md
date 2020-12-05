@@ -40,6 +40,7 @@ for (i in input){
     }
   }
 }
+
 ```
 
 ### Part Two
@@ -52,8 +53,17 @@ In your expense report, what is the product of the three entries that sum to 202
 Your puzzle answer was 103927824.
 
 ```{r}
-
-
+for (i in input){
+  for (j in input){
+    for (k in input){
+      if(i+j+k==2020 & i!=j & i!=k){
+        if(i>j | j > k)
+          next else  message(i,' and ',j,' and ',k,'; i*j*k=',(i*j*k))
+      }
+    }
+    
+  }
+}
 ```
 
 </div>
