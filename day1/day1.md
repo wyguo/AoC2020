@@ -30,7 +30,16 @@ Of course, your expense report is much larger. Find the two entries that sum to 
 Your puzzle answer was 471019.
 
 ```{r}
-
+input <- read.table("day1/input.txt", quote="\"", comment.char="")
+input <- as.vector(t(input))
+for (i in input){
+  for (j in input){
+    if(i+j==2020 & i!=j){
+      if(i>j)
+        next else message(i,' and ',j, '; i*j=',(i*j))
+    }
+  }
+}
 ```
 
 ### Part Two
@@ -42,13 +51,9 @@ In your expense report, what is the product of the three entries that sum to 202
 
 Your puzzle answer was 103927824.
 
-Both parts of this puzzle are complete! They provide two gold stars: **
+```{r}
 
-At this point, you should return to your Advent calendar and try another puzzle.
 
-If you still want to see it, you can get your puzzle input.
-
-You can also [Share] this puzzle.
-
+```
 
 </div>
