@@ -1,12 +1,6 @@
----
-output:
-  html_document: default
-  pdf_document: default
----
-
-<div align="justify">
 Day 1: Report Repair
 ==============
+<div align="justify">
 
 ### Part one
 After saving Christmas five years in a row, you've decided to take a vacation at a nice resort on a tropical island. Surely, Christmas will go on without you.
