@@ -47,6 +47,8 @@ For each group, count the number of questions to which anyone answered "yes". Wh
 
 Your puzzle answer was 6768.
 
+R scripts:
+
 ```{r}
 input <- read.table("day6/input.txt", quote="\"",blank.lines.skip = F)
 input <- as.vector(t(input))
@@ -61,6 +63,33 @@ n <- sapply(check, function(x){
 
 sum(n)
 ```
+
+Python scripts:
+```
+import os
+
+work_dir = r'C:\Project\R project\Project2020\AoC2020\AoC2020'
+work_dir = os.path.normpath(work_dir)
+os.chdir(work_dir)
+
+## part1
+with open('day6/input.txt') as f:
+    content = f.readlines()
+
+combined =''
+for i in content:
+    combined+=str(i)
+
+divided = combined.split('\n\n')
+divided = [x.replace('\n','') for x in divided]
+
+splited = [list(set([l for l in x])) for x in divided]
+n = [len(x) for x in splited]
+sum(n)
+
+
+```
+
 
 ### Part Two
 As you finish the last group's customs declaration, you notice that you misread one word in the instructions:
