@@ -131,6 +131,8 @@ For each group, count the number of questions to which everyone answered "yes". 
 
 Your puzzle answer was 3489.
 
+R scripts
+
 ```{r}
 input <- read.table("day6/input.txt", quote="\"",blank.lines.skip = F)
 input <- as.vector(t(input))
@@ -153,5 +155,24 @@ n <- sapply(check, function(x){
 sum(n)
 
 ```
+
+Python scripts
+
+```
+divided1 = [x.replace('\n','') for x in divided0]
+# divided2 = [list(x.strip('\n').split('\n')) for x in divided0]
+divided2 = [list(filter(None,x.split('\n'))) for x in divided0]
+splited = [[l for l in x] for x in divided1]
+people = [len(x) for x in divided2]
+
+result = []
+for i,ele in enumerate(splited):
+    all_dic = {x:ele.count(x) for x in ele}
+    valid = [k for k,v in all_dic.items() if v == people[i]]
+    result.append(len(valid))
+    
+sum(result)
+```
+
 
 </div>
